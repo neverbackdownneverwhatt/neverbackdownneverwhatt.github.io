@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!-- Thanks ChatGPT 🤩 -->
 <html>
 <head>
   <style>
@@ -10,22 +10,19 @@
       top: 0;
       left: 0;
     }
-    #loading-message {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 24px;
-    }
   </style>
   <script>
     function resizeIframe() {
       var iframe = document.getElementById("myIframe");
       if (iframe) {
         iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
-        setTimeout(function() {
-          document.getElementById("loading-message").style.display = "none";
-        }, 5000); // Hide the message after 5 seconds
+      }
+    }
+    
+    function removeElement() {
+      var element = document.getElementById("headlessui-dialog-:r0:");
+      if (element) {
+        element.remove();
       }
     }
   </script>
@@ -34,7 +31,9 @@
   <!-- Embed the website within an iframe -->
   <iframe id="myIframe" src="https://stumbleguys.com/play" onload="resizeIframe()"></iframe>
   
-  <!-- Display a loading message over the iframe -->
-  <div id="loading-message">Just wait for it to load, you cannot choose an age.</div>
+  <!-- Remove the specified element -->
+  <script>
+    removeElement();
+  </script>
 </body>
 </html>
