@@ -1,4 +1,4 @@
-<!DOCTYPE html> <!-- Thanks ChatGPT 🤩 -->
+<!DOCTYPE html>
 <html>
 <head>
   <style>
@@ -16,11 +16,16 @@
       var iframe = document.getElementById("myIframe");
       if (iframe) {
         iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+
+        // After the iframe is fully loaded, call the function to remove the element
+        iframe.contentWindow.addEventListener('load', function() {
+          removeElement();
+        });
       }
     }
 
     function removeElement() {
-      var element = document.querySelector("#headlessui-portal-root > div > div");
+      var element = iframe.contentDocument.querySelector("#headlessui-portal-root > div > div");
       if (element) {
         element.remove();
       }
@@ -30,10 +35,5 @@
 <body>
   <!-- Embed the website within an iframe -->
   <iframe id="myIframe" src="https://stumbleguys.com/play" onload="resizeIframe()"></iframe>
-  
-  <!-- Remove the element with the specified selector -->
-  <script>
-    removeElement();
-  </script>
 </body>
 </html>
