@@ -18,9 +18,9 @@
         iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
       }
     }
-    
+
     function removeElement() {
-      var element = document.getElementById("headlessui-dialog-:r0:");
+      var element = document.querySelector("#headlessui-portal-root > div > div");
       if (element) {
         element.remove();
       }
@@ -31,7 +31,7 @@
   <!-- Embed the website within an iframe -->
   <iframe id="myIframe" src="https://stumbleguys.com/play" onload="resizeIframe()"></iframe>
   
-  <!-- Remove the specified element -->
+  <!-- Remove the element with the specified selector -->
   <script>
     removeElement();
   </script>
